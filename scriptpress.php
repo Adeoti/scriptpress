@@ -9,7 +9,7 @@
  * License: GPLv2 or later
  * Author: Adeoti Nurudeen
  * Author URI: https://adeoti.netlify.app
- * Text Domain: ScriPtpress
+ * Text Domain: Scriptpress
  * 
  * @package ScriptPress
  */
@@ -33,7 +33,7 @@ class ScriptPress extends SPMenu{
         add_action('wp_footer',[$this,'injectSPFooter']);
         add_action('wp_head',[$this,'injectCss']);
         add_action('wp_footer',[$this,'injectJs']);
-        add_action('wp_enqueue_scripts', [$this, 'adminEnqueueScripts']);
+        add_action('admin_enqueue_scripts', [$this, 'adminEnqueueScripts']);
         add_filter('admin_footer_text', [$this,'scriptPressFotter']);
     }
     public function registerActivation(){

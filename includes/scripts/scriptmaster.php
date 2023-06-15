@@ -33,7 +33,9 @@ if(!current_user_can("manage_options")){
 
 
 <div class="wrap">
-    <p>Insert Custom <?php echo ucfirst($msgHolder)?> Script</p>
+    <p class="sc-primary-color"> 
+    <span class="dashicons dashicons-edit"></span>
+        Insert Custom <?php echo ucfirst($msgHolder)?> Script</p>
 
     <?php
 
@@ -53,7 +55,7 @@ if(!current_user_can("manage_options")){
                     echo "<div id='message' class='updated notice is-dismissible'>
                     <p>Your custom ".$msgHolder." script has been inserted successfully!</p>
                     </div>";
-                    
+                   
                 }
             }else{
                 echo "<div class='notice notice-warning is-dismissible'>
@@ -74,7 +76,7 @@ if(!current_user_can("manage_options")){
     ?>
 
     <form action="" method="POST">
-    <textarea  placeholder="Write or paste your <?php echo $msgHolder; ?> script here" name="sp-<?php echo $msgHolder; ?>-script" class="large-text" style="height:380px; overflow:auto; padding:8px; border:none; resize:none; outline:1px solid #482ff7;"><?php echo get_option("wp-scriptpress-".$msgHolder,'none');?></textarea>
-        <button class="button button-primary" name="sp-save-<?php echo $msgHolder; ?>">save changes</button>
+    <textarea id="wp-scriptpress-editor" placeholder="Write or paste your <?php echo $msgHolder; ?> script here" name="sp-<?php echo $msgHolder; ?>-script" class="large-text" style="height:380px; overflow:auto; padding:8px; border:none; resize:none; outline:1px solid #482ff7;"><?php echo get_option("wp-scriptpress-".$msgHolder,'none');?></textarea>
+        <br><button class="button button-primary" name="sp-save-<?php echo $msgHolder; ?>">save changes</button>
     </form>
 </div>
