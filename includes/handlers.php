@@ -18,7 +18,7 @@ class ScriptPressHandler{
         
     }
     public function adminEnqueueScripts(){
-        wp_enqueue_script('scriptPressMainjs', plugin_dir_url(__FILE__)."/assets/js/index.js", array(), 1.0, true);
+        wp_enqueue_script('scriptPressMainjs', plugin_dir_url(__FILE__)."../assets/js/index.js", array(), 1.0, true);
     }
     public function scriptPressFotter($footer_text){
         $custom_text = '<center>
