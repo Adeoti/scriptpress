@@ -33,21 +33,18 @@ class ScriptPress extends SPMenu{
         add_action('wp_footer',[$this,'injectSPFooter']);
         add_action('wp_head',[$this,'injectCss']);
         add_action('wp_footer',[$this,'injectJs']);
+        add_action('wp_enqueue_scripts', [$this, 'adminEnqueueScripts']);
+        add_filter('admin_footer_text', [$this,'scriptPressFotter']);
     }
     public function registerActivation(){
         //set the activation status pointer
-        update_option('__script_press_activated',true);
         flush_rewrite_rules();
-        $is_scriptpress_active = get_option('__script_press_activated');
-        if($is_scriptpress_active){
-            wp_safe_redirect("admin.php?page=wp-script-press");
-            exit;
-        }
+       
         
     }
+
    
     public function registerDeactivation(){
-        update_option('__script_press_activated',false);
         flush_rewrite_rules();
     }
 

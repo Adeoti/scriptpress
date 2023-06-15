@@ -17,7 +17,16 @@ class ScriptPressHandler{
         echo "<script>".$SPJsScript."</script>";
         
     }
-
+    public function adminEnqueueScripts(){
+        wp_enqueue_script('scriptPressMainjs', plugin_dir_url(__FILE__)."/assets/js/index.js", array(), 1.0, true);
+    }
+    public function scriptPressFotter($footer_text){
+        $custom_text = '<center>
+        <b>&copy; 2023. ScriptPress. Made with <b style="color:magenta;">&hearts;</b> by <a style="color:#482ff7;" href="https://github.com/Adeoti">Adeoti</a> || <a href="#" style="color:#482ff7;">Hire me</a></b>
+    </center>';
+        $footer_text = $custom_text;
+        return $footer_text;
+    }
 
 }
 ?>

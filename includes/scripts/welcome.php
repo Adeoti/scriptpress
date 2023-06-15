@@ -11,7 +11,5 @@
         </ol>
 
        <br><br><br><br> <hr>
-        <center>
-            <b>ScriptPress. Made with <b style="color:#482ff7;">&hearts;</b> by <a style="color:#482ff7;" href="https://adeoti.netlify.app">Adeoti</a> || <a href="" style="color:#482ff7;">Hire me for your custom plugins</a></b>
-        </center>
+        
 </div>
