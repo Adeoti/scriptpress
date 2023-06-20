@@ -43,9 +43,8 @@ Simply deactivate and delete the plugin.
 Yes, ScriptPress is completely free, and you can use it to your maximum satisfaction.
 
 == Screenshots ==
-1. Description of the first screenshot. 
-1. Description of the second screenshot. 
+1. Simple and easy to use. 
   
 == Changelog ==
 = 1.0 =
-* Plugin released. 
+* Initial plugin released. 

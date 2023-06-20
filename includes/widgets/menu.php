@@ -4,7 +4,7 @@ class SPMenu extends ScriptPressHandler{
 
     /* Setting the Admin Menu Page */
     public function createSPMenu(){
-        add_menu_page("WP ScriptPress","ScriptPress","manage_options","wp-script-press",[$this, 'adminMenuPage'],"dashicons-car",50);
+        add_menu_page("WP ScriptPress","ScriptPress","manage_options","wp-script-press",[$this, 'adminMenuPage'], plugin_dir_url(__FILE__)."../../assets/images/scriptpress_logo.svg" ,50);
     }
 
     /* Admin Menu Page Template*/

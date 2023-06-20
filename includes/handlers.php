@@ -6,15 +6,15 @@
  */
 class ScriptPressHandler{
     public function injectSPHeader(){
-        $SPheaderScript = get_option('wp-scriptpress-header','none');
+        $SPheaderScript = get_option('wp-scriptpress-header','');
         echo $SPheaderScript;
     }
     public function injectSPFooter(){
-        $SPfooterScript = get_option('wp-scriptpress-footer','none');
+        $SPfooterScript = get_option('wp-scriptpress-footer','');
         echo $SPfooterScript;
     }
     public function injectCss(){
-        $SPCssScript = get_option('wp-scriptpress-css','none');
+        $SPCssScript = get_option('wp-scriptpress-css','');
         echo "<style>".$SPCssScript."</style>";
     }
     public function injectJs(){
