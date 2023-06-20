@@ -1,23 +1,31 @@
 <?php
     if(! current_user_can('manage_options')){
         return;
+        //Abort operation if the current user isn't an admin
     }
 ?>
+
 <div class="wrap">
     <h2>ScriptPress Dashboard</h2>
     <hr>
 
         <?php
+            
+            //Set the tab variable
+
             $default_tab = null;
             $tab = isset($_GET['tab'])? $_GET['tab'] : $default_tab;
         ?>
+
+        <!-- The nav tabs -->
+
     <nav class="nav-tab-wrapper">
         <a href="?page=wp-script-press&tab=wp-SPheader" class="nav-tab <?php if($tab === 'wp-SPheader'){ echo 'nav-tab-active';}?>">Header</a>
         <a href="?page=wp-script-press&tab=wp-SPfooter" class="nav-tab <?php if($tab === 'wp-SPfooter'){ echo 'nav-tab-active';}?>">Footer</a>
         <a href="?page=wp-script-press&tab=wp-SPcss" class="nav-tab <?php if($tab === 'wp-SPcss'){ echo 'nav-tab-active';}?>">CSS</a>
         <a href="?page=wp-script-press&tab=wp-SPjs" class="nav-tab <?php if($tab === 'wp-SPjs'){ echo 'nav-tab-active';}?>">JS</a>
     </nav>
-
+        <!-- The tab pannel -->
         <div class="tab-content">
             <div class="wrap">
             <?php

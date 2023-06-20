@@ -1,6 +1,11 @@
 <?php
+/*
+ The handler class that holds
+ the insertion methods 
+
+ */
 class ScriptPressHandler{
-    function injectSPHeader(){
+    public function injectSPHeader(){
         $SPheaderScript = get_option('wp-scriptpress-header','none');
         echo $SPheaderScript;
     }
@@ -17,6 +22,10 @@ class ScriptPressHandler{
         echo "<script>".$SPJsScript."</script>";
         
     }
+
+    /*
+    Enqueue scripts
+    */
     public function adminEnqueueScripts(){
 
        // Enqueue CodeMirror styles from the CDN
@@ -32,11 +41,13 @@ class ScriptPressHandler{
     wp_enqueue_style('codemirror-theme-eclipse', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/eclipse.min.css', array(), '5.62.0');
     wp_enqueue_style('scriptPressMainCss', plugin_dir_url(__FILE__)."../assets/css/index.css");
     
-   
     }
+
+    // Custom footer on the admin page
+
     public function scriptPressFotter($footer_text){
         $custom_text = '<center>
-        <b>&copy; 2023. ScriptPress. Made with <b class="sc-primary-color"><span class="dashicons dashicons-heart"></span></b> by <a class="sc-primary-color" href="https://github.com/Adeoti">Adeoti</a> || <a href="#" class="sc-primary-color">Hire me</a></b>
+        <b>&copy; 2023. ScriptPress. Made with <b class="sc-primary-color"><span class="dashicons dashicons-heart"></span></b> by <a class="sc-primary-color" href="https://github.com/Adeoti">Adeoti</a></b>
     </center>';
         $footer_text = $custom_text;
         return $footer_text;

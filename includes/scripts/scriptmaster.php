@@ -1,8 +1,11 @@
 <?php
 if(!current_user_can("manage_options")){
     return;
+    //Abort operation if user is not an admin
 }
 
+
+    //Populate the tabs
 
     if(isset($_GET['tab'])){
         $tab = esc_html($_GET['tab']);
@@ -31,7 +34,7 @@ if(!current_user_can("manage_options")){
         }
 ?>
 
-
+<!-- Present the tabs conditionally -->
 <div class="wrap">
     <p class="sc-primary-color"> 
     <span class="dashicons dashicons-edit"></span>
@@ -74,6 +77,9 @@ if(!current_user_can("manage_options")){
         }
 
     ?>
+
+    
+<!-- The form to accept scripts -->
 
     <form action="" method="POST">
     <textarea id="wp-scriptpress-editor" placeholder="Write or paste your <?php echo $msgHolder; ?> script here" name="sp-<?php echo $msgHolder; ?>-script" class="large-text" style="height:380px; overflow:auto; padding:8px; border:none; resize:none; outline:1px solid #482ff7;"><?php echo get_option("wp-scriptpress-".$msgHolder,'none');?></textarea>

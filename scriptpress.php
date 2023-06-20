@@ -8,7 +8,7 @@
  * Version: 1.0.0
  * License: GPLv2 or later
  * Author: Adeoti Nurudeen
- * Author URI: https://adeoti.netlify.app
+ * Author URI: https://github.com/Adeoti
  * Text Domain: Scriptpress
  * 
  * @package ScriptPress
@@ -20,6 +20,10 @@ if(! defined('ABSPATH')){
 require_once plugin_dir_path(__FILE__)."/includes/widgets/menu.php";
 require_once plugin_dir_path(__FILE__)."/includes/handlers.php";
 
+/*
+The main ScriptPress class
+ */
+
 class ScriptPress extends SPMenu{
     public $pluginpath;
     public function __construct()
@@ -28,11 +32,11 @@ class ScriptPress extends SPMenu{
         register_activation_hook(__FILE__, [$this, 'registerActivation']);
         register_deactivation_hook(__FILE__, array($this,'registerDeactivation'));
         add_action('admin_menu', [$this,'createSPMenu']);
-        add_filter('plugin_action_links_'.$this -> pluginpath, [$this, 'createSPLinks']);
-        add_action('wp_head',[$this,'injectSPHeader']);
-        add_action('wp_footer',[$this,'injectSPFooter']);
-        add_action('wp_head',[$this,'injectCss']);
-        add_action('wp_footer',[$this,'injectJs']);
+        add_filter("plugin_action_links_{$this -> pluginpath}", [$this, 'createSPLinks']);
+        add_action('wp_head', [$this,'injectSPHeader']);
+        add_action('wp_footer', [$this,'injectSPFooter']);
+        add_action('wp_head', [$this,'injectCss']);
+        add_action('wp_footer', [$this,'injectJs']);
         add_action('admin_enqueue_scripts', [$this, 'adminEnqueueScripts']);
         add_filter('admin_footer_text', [$this,'scriptPressFotter']);
     }

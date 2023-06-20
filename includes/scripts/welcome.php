@@ -1,3 +1,6 @@
+
+<!-- The welcome page prior to tabs -->
+
 <div class="wrap">
     <h2>Welcome to ScriptPress</h2>
     <p>
